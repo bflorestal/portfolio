@@ -1,4 +1,3 @@
-// 1. Import utilities from `astro:content`
 import { z, defineCollection } from "astro:content";
 
 export const collections = {
