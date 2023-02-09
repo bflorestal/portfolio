@@ -1,0 +1,46 @@
+---
+import { Picture } from "@astrojs/image/components";
+
+const calculateAge = () => {
+  const birthday = "Jan 27 2003";
+  const dateOfBirth = new Date(birthday);
+
+  const diff = new Date().getTime() - dateOfBirth.getTime();
+  // 1 an = 31556736000 millisecondes
+  const age = Math.floor(diff / 31556736000);
+  return age;
+};
+---
+
+<section id="#about" class="flex justify-center items-start lg:items-center flex-col max-w-5xl w-full mx-auto py-14 lg:py-24">
+  <div class="flex flex-col gap-y-8 md:flex-row">
+    <div class="flex justify-center items-center w-full md:w-1/2">
+      <Picture
+        src="/img/bryan.png"
+        alt="Photo de Bryan Florestal"
+        widths={[200, 300]}
+        sizes="(min-width: 768px) 300px, 200px"
+        formats={['avif', 'webp', 'png']}
+        aspectRatio={1}
+        class="border-blue-500 border-2 border-solid rounded-4xl"
+      />
+    </div>
+    <div class="flex flex-col w-full md:w-1/2">
+      <h2 class="text-3xl font-semibold mb-6">À propos</h2>
+      {/* À changer plus tard */}
+      <span>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae,
+        quaerat deleniti commodi atque corporis magni fugiat suscipit?
+        Dicta, iusto. Dolores minus iusto qui obcaecati numquam eaque quo
+        est eius commodi?
+      </span>
+      <div class="mt-4">
+        <ul>
+          <li class="mb-2">Dernier diplôme obtenu : Administrateur de systèmes d&apos;information</li>
+          <li class="mb-2">Secteur : Île-de-France</li>
+          <li class="mb-2">Âge : {calculateAge()} ans</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
