@@ -1,0 +1,31 @@
+---
+import { Picture } from "@astrojs/image/components";
+import { getCollection } from "astro:content";
+
+// const allProjects = await getCollection("projects", ({ data }) => data.priority > 0);
+const allProjects = await getCollection("projects");
+// voir pour trier par date
+---
+
+<section id="projects" class="flex justify-center items-start lg:items-center flex-col max-w-5xl w-full mx-auto py-14 lg:py-24">
+    <h2 class="text-3xl font-semibold mb-8">Mes projets</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-6">
+        {allProjects.map(project => (
+            <article class="bg-slate-800 shadow-md cursor-pointer transition-all group hover:-translate-y-2">
+                <div class="group-hover:brightness-75 transition-all">
+                    <Picture 
+                        src={project.data.image}
+                        alt={project.data.name}
+                        widths={[640, 360]}
+                        sizes="(min-width: 768px) 640px, 360px"
+                        formats={['avif', 'webp', 'png']}
+                        aspectRatio={16/9}
+                    />
+                </div>
+                <div class="px-4 py-2">
+                    <h3 class="text-lg font-semibold">{project.data.name}</h3>
+                </div>
+            </article>
+        ))}
+    </div>
+</section>
