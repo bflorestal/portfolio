@@ -12,29 +12,35 @@ const calculateAge = () => {
 };
 ---
 
-<section id="about" class="flex justify-center items-start lg:items-center flex-col max-w-5xl w-full mx-auto py-14 lg:py-24">
+<section
+  id="about"
+  class="mx-auto flex w-full max-w-5xl flex-col items-start justify-center py-14 lg:items-center lg:py-24"
+>
   <div class="flex flex-col gap-y-8 md:flex-row">
-    <div class="flex justify-center items-center w-full md:w-1/2">
+    <div class="flex w-full items-center justify-center md:w-1/2">
       <Image
         src="/img/bryan.png"
         alt="Photo de Bryan Florestal"
         width={300}
         height={300}
-        class="border-blue-500 border-2 border-solid rounded-4xl"
+        class="rounded-4xl border-2 border-solid border-blue-500"
       />
     </div>
-    <div class="flex flex-col w-full md:w-1/2">
-      <h2 class="text-3xl font-semibold mb-6">À propos</h2>
+    <div class="flex w-full flex-col md:w-1/2">
+      <h2 class="mb-6 text-3xl font-semibold">À propos</h2>
       {/* À changer plus tard */}
       <span>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae,
-        quaerat deleniti commodi atque corporis magni fugiat suscipit?
-        Dicta, iusto. Dolores minus iusto qui obcaecati numquam eaque quo
-        est eius commodi?
+        quaerat deleniti commodi atque corporis magni fugiat suscipit? Dicta,
+        iusto. Dolores minus iusto qui obcaecati numquam eaque quo est eius
+        commodi?
       </span>
       <div class="mt-4">
         <ul>
-          <li class="mb-2">Dernier diplôme obtenu : Expert en Informatique et Systèmes d&apos;Information</li>
+          <li class="mb-2">
+            Dernier diplôme obtenu : Expert en Informatique et Systèmes
+            d&apos;Information
+          </li>
           <li class="mb-2">Secteur : Île-de-France</li>
           <li class="mb-2">Âge : {calculateAge()} ans</li>
         </ul>

@@ -1,37 +1,46 @@
 ---
 import Icon from "astro-icon";
+
 import Rating from "../Rating.astro";
 
 const skills = new Map([
-  ["HTML", {icon: "vscode-icons:file-type-html", rating: 4.5}],
-  ["CSS", {icon: "vscode-icons:file-type-css", rating: 4.5}],
-  ["JavaScript", {icon: "logos:javascript", rating: 4}],
-  ["PHP", {icon: "logos:php", rating: 3}],
-  ["Python", {icon: "logos:python", rating: 3}],
-  ["Sass", {icon: "vscode-icons:file-type-scss2", rating: 4}],
-  ["TypeScript", {icon: "logos:typescript-icon", rating: 3.5}],
-  ["Node.js", {icon: "vscode-icons:file-type-node", rating: 3.5}],
-  ["React", {icon: "logos:react", rating: 3.5}],
-  ["Next.js", {icon: "vscode-icons:file-type-next", rating: 3}],
-  ["WordPress", {icon: "mdi:wordpress", rating: 4}],
-  ["Express", {icon: "simple-icons:express", rating: 3}],
-  ["MongoDB", {icon: "simple-icons:mongodb", rating: 3}],
-  ["MySQL", {icon: "logos:mysql-icon", rating: 3}],
-  ["Symfony", {icon: "logos:symfony", rating: 3}],
+  ["HTML", { icon: "vscode-icons:file-type-html", rating: 4.5 }],
+  ["CSS", { icon: "vscode-icons:file-type-css", rating: 4.5 }],
+  ["JavaScript", { icon: "logos:javascript", rating: 4 }],
+  ["PHP", { icon: "logos:php", rating: 3 }],
+  ["Python", { icon: "logos:python", rating: 3 }],
+  ["Sass", { icon: "vscode-icons:file-type-scss2", rating: 4 }],
+  ["TypeScript", { icon: "logos:typescript-icon", rating: 3.5 }],
+  ["Node.js", { icon: "vscode-icons:file-type-node", rating: 3.5 }],
+  ["React", { icon: "logos:react", rating: 3.5 }],
+  ["Next.js", { icon: "vscode-icons:file-type-next", rating: 3 }],
+  ["WordPress", { icon: "mdi:wordpress", rating: 4 }],
+  ["Express", { icon: "simple-icons:express", rating: 3 }],
+  ["MongoDB", { icon: "simple-icons:mongodb", rating: 3 }],
+  ["MySQL", { icon: "logos:mysql-icon", rating: 3 }],
+  ["Symfony", { icon: "logos:symfony", rating: 3 }],
 ]);
 ---
 
-<section id="skills" class="flex justify-center items-start lg:items-center flex-col max-w-5xl w-full mx-auto py-14 lg:py-24">
-    <h2 class="text-3xl font-semibold mb-8">Compétences</h2>
-    <div class="w-full">
-        <ul class="grid grid-cols-3 md:grid-cols-5 gap-6 place-items-center">
-            {Array.from(skills).map(([skill, { icon, rating }]) => (
-                <li class="flex flex-col items-center gap-2">
-                    <Icon name={icon} class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16" />
-                    <p class="hidden invisible md:block md:visible">{skill}</p>
-                    <Rating rating={rating} />
-                </li>
-            ))}
-        </ul>
-    </div>
+<section
+  id="skills"
+  class="mx-auto flex w-full max-w-5xl flex-col items-start justify-center py-14 lg:items-center lg:py-24"
+>
+  <h2 class="mb-8 text-3xl font-semibold">Compétences</h2>
+  <div class="w-full">
+    <ul class="grid grid-cols-3 place-items-center gap-6 md:grid-cols-5">
+      {
+        Array.from(skills).map(([skill, { icon, rating }]) => (
+          <li class="flex flex-col items-center gap-2">
+            <Icon
+              name={icon}
+              class="h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16"
+            />
+            <p class="invisible hidden md:visible md:block">{skill}</p>
+            <Rating rating={rating} />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </section>

@@ -1,16 +1,19 @@
 ---
-import Button from '../Button.astro';
+import Button from "../Button.astro";
 ---
 
-<section id="hero" class="flex justify-center items-start lg:items-center flex-col min-h-screen max-w-5xl w-full mx-auto">
-    <div class="flex flex-col gap-y-4">
-        <p class="lg:text-xl">Bonjour, je suis</p>
-        <h1 class="text-3xl lg:text-6xl font-semibold">Bryan Florestal</h1>
-        <h2 class="text-3xl lg:text-6xl font-semibold">
-          un <span class="text-blue-500">développeur web</span>
-        </h2>
-    </div>
-    <div class="mt-10">
-        <Button href="/resume/resume.pdf">Voir mon CV</Button>
-    </div>
+<section
+  id="hero"
+  class="mx-auto flex min-h-screen w-full max-w-5xl flex-col items-start justify-center lg:items-center"
+>
+  <div class="flex flex-col gap-y-4">
+    <p class="lg:text-xl">Bonjour, je suis</p>
+    <h1 class="text-3xl font-semibold lg:text-6xl">Bryan Florestal</h1>
+    <h2 class="text-3xl font-semibold lg:text-6xl">
+      un <span class="text-blue-500">développeur web</span>
+    </h2>
+  </div>
+  <div class="mt-10">
+    <Button href="/resume/resume.pdf">Voir mon CV</Button>
+  </div>
 </section>
