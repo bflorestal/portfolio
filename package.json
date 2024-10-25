@@ -6,6 +6,7 @@
     "dev": "astro dev --host",
     "start": "astro dev",
     "check": "astro check",
+    "clean": "git clean -xdf node_modules dist .astro .eslintcache",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
