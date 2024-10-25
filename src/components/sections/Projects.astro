@@ -1,5 +1,5 @@
 ---
-import { Picture } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
 // const allProjects = await getCollection("projects", ({ data }) => data.priority > 0);
@@ -13,13 +13,11 @@ const allProjects = await getCollection("projects");
         {allProjects.map(project => (
             <article class="bg-slate-800 shadow-md cursor-pointer transition-all group hover:-translate-y-2">
                 <div class="group-hover:brightness-75 transition-all">
-                    <Picture 
+                    <Image 
                         src={project.data.image}
                         alt={project.data.name}
-                        widths={[640, 360]}
-                        sizes="(min-width: 768px) 640px, 360px"
-                        formats={['avif', 'webp', 'png']}
-                        aspectRatio={16/9}
+                        width={640}
+                        height={360}
                     />
                 </div>
                 <div class="px-4 py-2">
